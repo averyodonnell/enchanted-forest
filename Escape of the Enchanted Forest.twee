@@ -1,0 +1,101 @@
+:: StoryTitle
+Escape of the Enchanted Forest
+
+
+:: StoryData
+{
+  "ifid": "59B5210E-1D49-4CDC-9D80-FB7507A984F6",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Introduction",
+  "zoom": 1
+}
+
+
+:: Correct Answer {"position":"337.5,475","size":"100,100"}
+"You are clever," says the creature. It hands you the crystal, and you feel a surge of energy.
+
+[[Return to the forest paths|Start]]
+
+
+
+:: Correct Password {"position":"587.5,600","size":"100,100"}
+"Correct," the guardian says, stepping aside. You take the gemstone.
+
+[[Return to the forest paths|Start]]
+
+
+
+:: Crystal Path {"position":"400,350","size":"100,100"}
+You follow the winding path to a glistening pond, where a crystal glows at the bottom. As you reach for it, a creature emerges from the water.
+
+"Answer my riddle, or leave empty-handed," it says. 
+
+Riddle: *"I speak without a mouth and hear without ears. I have nobody, but I come alive with wind. What am I?"*
+
+- [[Answer: An Echo|Correct Answer]]
+- [[Leave and try a different path|Start]]
+
+
+
+:: Feather Path {"position":"525,350","size":"100,100"}
+The path takes you to a clearing where a magnificent bird perches on a branch. Its feathers shimmer in the sunlight, and you know one of them is what you seek.
+
+The bird offers you two choices:
+
+- [[Sing a song to the bird|Sing]]
+- [[Try to grab a feather quickly|Grab Feather]]
+
+
+
+:: Gemstone Path {"position":"650,350","size":"100,100"}
+You arrive at a cave entrance, where you spot a glittering gemstone. A guardian blocks the entrance, demanding a password.
+
+A clue on the wall reads: "The key is the color of the morning sky."
+
+[[Guess 'Blue'|Correct Password]]
+[[Guess 'Green'|Incorrect Password]]
+
+
+
+:: Grab Feather {"position":"712.5,475","size":"100,100"}
+
+
+
+:: Incorrect Password {"position":"712.5,600","size":"100,100"}
+
+
+
+:: Introduction {"position":"525,225","size":"100,100"}
+You find yourself lost in an enchanted forest. Rumor has it that to leave this place, you must gather three magical items: a crystal, a feather, and a gemstone. There are three paths before you, each leading to a different part of the forest.
+
+Which path will you take first?
+
+[[Path to the Crystal|Crystal Path]]
+[[Path to the Feather|Feather Path]]
+[[Path to the Gemstone|Gemstone Path]]
+
+
+
+:: Sing {"position":"587.5,475","size":"100,100"}
+You sing a gentle song, and the bird listens, enchanted. In gratitude, it gifts you one of its feathers.
+
+[[Return to the forest paths|Start]]
+
+
+
+:: Start {"position":"462.5,475","size":"100,100"}
+
+
+
+:: The exit {"position":"400,650","size":"100,100"}
+With the crystal, feather, and gemstone in hand, you find a glowing door in the heart of the forest. You approach it, but it only opens if you hold all three items.
+
+(if: $hasCrystal is true and $hasFeather is true and $hasGemstone is true)[
+The door opens, and you step through, leaving the enchanted forest behind. You've escaped!
+]
+
+(if: $hasCrystal is false or $hasFeather is false or $hasGemstone is false)[
+The door remains shut. You realize you need all three magical items to escape.
+]
+
